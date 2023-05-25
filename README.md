@@ -109,8 +109,8 @@ Q(t+1)=T′Q(t)+TQ(t)′
 ### PROGRAM 
 /*
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: BALA MURUGAN P
+RegisterNumber:  212222230017
 */
 1 SR FLIPFLOP
 
@@ -140,6 +140,34 @@ Qbar = ((~J)&Qbar)|((~K)&(~Qbar));
 end
 endmodule
 
+3 D flipflop
+
+module dflipflop(D,clk,Q,Qbar);
+input D,clk;
+output reg Q;
+output reg Qbar;
+initial Q=0;
+initial Qbar=1;
+always @(posedge clk)
+begin
+Q=D;
+Qbar=~D;
+end
+endmodule
+
+4  T flipflop
+
+module Tflipflop(T,Q,Qbar,clk);
+input T,clk;
+output reg Q,Qbar;
+initial Q = 0;
+initial Qbar = 1;
+always @(posedge clk)
+begin
+Q = ((T&(~Q))|((~T)&Q));
+Qbar = ((~T)&Qbar)|(T&(~Qbar));
+end
+endmodule
 
 
 
@@ -153,6 +181,13 @@ SR FLIPFLOP
 JK FLIPFLOP
 ![jkflipflop](https://github.com/Bala1511/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118680410/3b4e9983-9f8d-4254-ab34-b52a77945719)
 
+D FLIPFLOP
+![dflipflop](https://github.com/Bala1511/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118680410/acdeaadd-855e-4d7c-80c8-c22c4508c49e)
+
+T FLIPFLOP
+![tflipflop](https://github.com/Bala1511/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118680410/d647c054-40fb-4e07-b129-4bd0aa7c97b2)
+
+
 
 
 
@@ -162,12 +197,12 @@ SR FLIPFLOP
 ![sr](https://github.com/Bala1511/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118680410/1a01a49a-1279-4c57-b8cb-87a846d8712f)
 JK FLIPFLOP
 ![JK](https://github.com/Bala1511/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118680410/9d1dc464-c183-483d-8f56-c853f25eefc7)
-
-
-
-
-
+D FLIPFLOP
+![dfftimeline](https://github.com/Bala1511/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118680410/53ae7096-ef82-4bcd-a884-c91b654440bb)
+T FLIPFLOP
+![SS](https://github.com/Bala1511/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118680410/d753c442-b177-47c3-b72a-3119ca0470a8)
 
 
 
 ### RESULTS 
+All the flipflops are implementde using verilog and their functionality has been validated using their functional tables.
