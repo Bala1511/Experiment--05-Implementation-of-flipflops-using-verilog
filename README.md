@@ -112,6 +112,33 @@ Program for flipflops  and verify its truth table in quartus using Verilog progr
 Developed by: 
 RegisterNumber:  
 */
+1 SR FLIPFLOP
+
+module flipflop(S,R,Q,Qbar,clk);
+input S,R,clk;
+output reg Q,Qbar;
+initial Q = 0;
+initial Qbar = 1;
+always @(posedge clk)
+begin
+Q = S|((~R)&Q);
+Qbar = R|((~S)&(~Q));
+end
+endmodule
+
+2 JK FLIPFLOP
+
+module jk(J,K,Q,Qbar,clk);
+input J,K,clk;
+output reg Q,Qbar;
+initial Q = 0;
+initial Qbar = 1;
+always @(posedge clk)
+begin
+Q = (((~K)&Q)|(J&(~Q)));
+Qbar = ((~J)&Qbar)|((~K)&(~Qbar)); 
+end
+endmodule
 
 
 
@@ -120,15 +147,21 @@ RegisterNumber:
 
 ### RTL LOGIC FOR FLIPFLOPS 
 
+SR FLIPFLOP
+![srflipflop](https://github.com/Bala1511/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118680410/fca2c504-f666-4401-9dbf-0268eef861c9)
 
-
-
-
+JK FLIPFLOP
+![jkflipflop](https://github.com/Bala1511/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118680410/3b4e9983-9f8d-4254-ab34-b52a77945719)
 
 
 
 
 ### TIMING DIGRAMS FOR FLIP FLOPS 
+
+SR FLIPFLOP
+![sr](https://github.com/Bala1511/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118680410/1a01a49a-1279-4c57-b8cb-87a846d8712f)
+JK FLIPFLOP
+![JK](https://github.com/Bala1511/Experiment--05-Implementation-of-flipflops-using-verilog/assets/118680410/9d1dc464-c183-483d-8f56-c853f25eefc7)
 
 
 
